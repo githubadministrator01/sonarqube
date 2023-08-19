@@ -41,9 +41,7 @@ pipeline {
                 script {
                     if (params.dry_run) {
                         sh "helm upgrade -i -n${params.namespace} sonarqube-dce -f sonar-values.yaml sonarqube-dce/ --dry-run"
-                    } else {
-                        sh "helm upgrade -i -n${params.namespace} sonarqube-dce -f sonar-values.yaml sonarqube-dce/"
-                    }
+                    } 
                 }
             }
         }
