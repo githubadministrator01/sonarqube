@@ -18,7 +18,7 @@ pipeline {
         string defaultValue: 'sonarqube-dce', description: 'k8s namespace to deploy to', name: 'namespace'
     }
 
-	stages{		
+    stages{		
         stage("Validate kubectl and helm installation") {
             steps {
                 sh """
@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-		stage("Deploy Sonar") {
+	stage("Deploy Sonar") {
             steps {
                 sh "helm upgrade -i -n${params.namespace} sonarqube-dce -f sonar-values.yaml sonarqube-dce/"
             }
