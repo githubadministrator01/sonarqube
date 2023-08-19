@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
+
+  # Ubuntu-server - Official Ubuntu 20.04 LTS
+  config.vm.define "server" do |server|
+    server.vm.box = "ubuntu/focal64"
+    server.vm.hostname = "ubuntu-server"
+    server.vm.network "private_network", ip: "192.168.99.100"
+    server.vm.synced_folder "share", "/vagrant"
+    server.vm.provision "shell", path: "set_dns.sh"
+      
+    server.vm.provider "virtualbox" do |v|
+      v.gui = false
+      v.name = "ubuntu-server"
+      v.memory = 4000
+      v.cpus = 2
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--ioapic", "on"]
+    end
+  end  
+end
