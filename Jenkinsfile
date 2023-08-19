@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-	stage("Deploy Sonar") {
+	    stage("Deploy Sonar") {
             steps {
                 sh "helm upgrade -i -n${params.namespace} sonarqube-dce -f sonar-values.yaml sonarqube-dce/"
             }
