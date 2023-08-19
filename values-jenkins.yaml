@@ -255,6 +255,7 @@ controller:
     - ws-cleanup
     - sonar
     - pipeline-stage-view
+    - github-branch-source
 
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
