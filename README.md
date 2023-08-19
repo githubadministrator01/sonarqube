@@ -28,3 +28,4 @@ Create tls cert and key
 Create k8s secret to store the selfsigned cert and key for the ingress
 Prometheus monitoring enabled
 Adjusted sonarqube chart templates and values in order to prometheus-operator be able to discover sonarqube podmonitor
+Sonarqube integrated with Jenkins and Sonar code quality analysis enabled against the code repo

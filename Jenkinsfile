@@ -46,6 +46,11 @@ pipeline {
             }
         }
 	    stage("Deploy Sonar") {
+            input {
+                message 'Do you want to deploy?'
+                id 'helm_deployment'
+                ok 'Yes?'
+            }
             steps {
                 sh "helm upgrade -i -n${params.namespace} sonarqube-dce -f sonar-values.yaml sonarqube-dce/"
             }
