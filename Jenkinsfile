@@ -46,6 +46,9 @@ pipeline {
             }
         }
 	    stage("Deploy Sonar") {
+            options {
+                timeout(time: 2, unit: 'MINUTES') 
+            }
             input {
                 message 'Do you want to deploy?'
                 id 'helm_deployment'
