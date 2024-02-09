@@ -1,6 +1,6 @@
 * High level Overview
 
-** Install the required tools:
+* * Install the required tools:
 
 1. Provision Ubuntu virtual machine via vagrant
 - Vagrantfile created to provision Ubuntu VM
