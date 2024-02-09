@@ -1,6 +1,6 @@
-* High level Overview
+# High level Overview
 
-* * Install the required tools:
+## Install the required tools:
 
 1. Provision Ubuntu virtual machine via vagrant
 - Vagrantfile created to provision Ubuntu VM
@@ -23,4 +23,4 @@
 - Create tls certificate and key
 - Create Kubernetes secret to store the self-signed certificate and key for the ingress
 - Prometheus monitoring enabled
-- 5.6 Adjusted sonarqube chart template "prometheus-podmonitor.yaml" and values in order to prometheus-operator be able to discover sonarqube podmonitor
+- Adjusted sonarqube chart template "prometheus-podmonitor.yaml" and values in order to prometheus-operator be able to discover sonarqube podmonitor

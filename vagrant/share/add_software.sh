@@ -5,8 +5,8 @@ sudo apt update && sudo apt install -y git curl software-properties-common
 
 # *****Add kubeconfig to .kube*****
 sudo mkdir -p ~/.kube && \
-sudo cp /vagrant/kubeconfig--sonar-dev--petar ~/.kube/kubeconfig--sonar-dev--petar && \
-echo 'export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/kubeconfig--sonar-dev--petar"' >> ~/.bashrc && \
+sudo cp /vagrant/kubeconfig-sonar-dev ~/.kube/kubeconfig-sonar-dev && \
+echo 'export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/kubeconfig-sonar-dev"' >> ~/.bashrc && \
 source ~/.bashrc
 
 # ******Instal kubectl and verify it******
