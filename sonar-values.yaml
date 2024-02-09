@@ -234,7 +234,7 @@ ApplicationNodes:
       # Name of the label on target services that prometheus uses as job name
       # jobLabel: ""
       # Add additional labels for the podmonitor
-      serviceMonitorAdditionalLabels:
+      podMonitorAdditionalLabels:
         release: prometheus
 
   # List of plugins to install.
