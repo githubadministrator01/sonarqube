@@ -13,7 +13,7 @@ on:
         default: false
 
 env:
-  KUBECONFIG: ${{ vars.KUBECONFIG }}
+  KUBECONFIG: ${{ secrets.KUBECONFIG }}
   REPO: "https://SonarSource.github.io/helm-chart-sonarqube"
 
 jobs:
@@ -44,6 +44,15 @@ jobs:
       # - name: Get caller identity
       #   run: |
       #     aws sts get-caller-identity
+
+      - name: Create `.kube` directory
+        run: mkdir -p ~/.kube/
+
+      - name: Create kubectl config
+        run: |
+          cat << EOF >> ~/.kube/kubeconfig-sonar-dev
+          ${{ env.KUBECONFIG }}
+          EOF  
 
       - name: Validate kubectl and helm installation
         run: |
