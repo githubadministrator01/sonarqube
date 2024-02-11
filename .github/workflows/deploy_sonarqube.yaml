@@ -38,6 +38,7 @@ jobs:
         run: |
           helm version
           kubectl version
+          kubectl get no
   
   deploy:
     runs-on: ubuntu-latest
