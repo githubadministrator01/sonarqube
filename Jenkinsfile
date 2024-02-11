@@ -28,7 +28,7 @@ pipeline {
                 """
             }
         }
-        stage("add Sonar repo") {
+        stage("Add Sonar repo") {
             steps {
                 sh """
                     helm repo add sonarqube ${repo}
