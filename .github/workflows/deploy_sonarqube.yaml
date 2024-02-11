@@ -14,6 +14,7 @@ on:
 
 env:
   REPO: "https://SonarSource.github.io/helm-chart-sonarqube"
+  NAMESPACE: "sonarqube-dce"
 
 jobs:
   setup:
@@ -70,17 +71,17 @@ jobs:
         if: ${{ inputs.dry_run }}
         run: |
           echo "Run the sonarqube helm chart in dry_run mode" 
-          helm upgrade -i -n${{ vars.NAMESPACE }} sonarqube-dce -f sonar-values.yaml sonarqube-dce/ --dry-run
+          helm upgrade -i -n${{ env.NAMESPACE }} sonarqube-dce -f sonar-values.yaml sonarqube-dce/ --dry-run
 
       - name: Deploy sonarqube
         if: ${{ inputs.dry_run == false }}
         run: |
           echo "Deploy sonarqube helm chart"
-          helm upgrade -i -n${{ vars.NAMESPACE }} sonarqube-dce -f sonar-values.yaml sonarqube-dce/
+          helm upgrade -i -n${{ env.NAMESPACE }} sonarqube-dce -f sonar-values.yaml sonarqube-dce/
 
   verify:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
       - name: Show deployment details
-        run: kubectl get all -n${{ vars.NAMESPACE }}
+        run: kubectl get all -n${{ env.NAMESPACE }}
