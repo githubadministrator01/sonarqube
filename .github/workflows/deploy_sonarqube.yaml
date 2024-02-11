@@ -34,10 +34,6 @@ jobs:
         with:
           version: 'v3.11.0'
 
-  #validate:
-  #  runs-on: ubuntu-latest
-  #  needs: setup
-  #  steps:
       - name: Validate kubectl and helm installation
         run: |
           helm version
