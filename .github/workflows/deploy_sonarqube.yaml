@@ -13,7 +13,6 @@ on:
         default: false
 
 env:
-  KUBECONFIG: ${{ secrets.KUBECONFIG }}
   REPO: "https://SonarSource.github.io/helm-chart-sonarqube"
 
 jobs:
