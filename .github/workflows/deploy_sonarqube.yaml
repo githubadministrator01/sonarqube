@@ -49,9 +49,7 @@ jobs:
 
       - name: Create kubectl config
         run: |
-          cat << EOF >> ~/.kube/kubeconfig-sonar-dev
-          ${{ secrets.KUBECONFIG }}
-          EOF
+          echo "${{ secrets.KUBECONFIG }} >  ~/.kube/kubeconfig-sonar-dev"
 
       - name: Validate kubectl and helm installation
         run: |
