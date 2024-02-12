@@ -13,8 +13,8 @@ on:
         default: false
 
 env:
-  REPO: "https://SonarSource.github.io/helm-chart-sonarqube"
-  NAMESPACE: "sonarqube-dce"
+  REPO: ${{ vars.REPO }}
+  NAMESPACE: ${{ vars.NAMESPACE }}
 
 jobs:
   setup:
