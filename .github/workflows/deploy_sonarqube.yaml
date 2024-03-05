@@ -50,7 +50,7 @@ jobs:
 
       - name: Create kubectl config
         run: |
-          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/kubeconfig-sonar-dev
+          echo "${{ secrets.KUBECONFIG }}" | tee ~/.kube/kubeconfig-sonar-dev
           ls -lrt ~/.kube/kubeconfig-sonar-dev
           cat ~/.kube/kubeconfig-sonar-dev
 
