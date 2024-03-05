@@ -52,6 +52,7 @@ jobs:
         run: |
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/kubeconfig-sonar-dev
           ls -lrt ~/.kube/kubeconfig-sonar-dev
+          cat ~/.kube/kubeconfig-sonar-dev
 
       - name: Validate kubectl and helm installation
         run: |
