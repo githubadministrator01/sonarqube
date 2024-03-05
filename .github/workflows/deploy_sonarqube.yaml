@@ -54,6 +54,7 @@ jobs:
           ls -lrt ~/.kube/kubeconfig-sonar-dev
           cat ~/.kube/kubeconfig-sonar-dev
           chown $(id -u):$(id -g) ~/.kube/kubeconfig-sonar-dev
+          ls -lrt ~/.kube/kubeconfig-sonar-dev
           kubectl config use-context docker-desktop
           kubectl config current-context
 
