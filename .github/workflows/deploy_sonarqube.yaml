@@ -57,7 +57,7 @@ jobs:
       - name: Validate kubectl and helm installation
         run: |
           helm version
-          kubectl config get-contexts
+          kubectl config view
 
   deploy:
     runs-on: ubuntu-latest
