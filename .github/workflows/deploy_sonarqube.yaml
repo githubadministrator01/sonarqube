@@ -52,12 +52,13 @@ jobs:
         run: |
           echo "${{ secrets.KUBECONFIG }}" | base64 --decode > ~/.kube/kubeconfig-sonar-dev
           ls -lrt ~/.kube/kubeconfig-sonar-dev
-          # cat ~/.kube/kubeconfig-sonar-dev
+          cat ~/.kube/kubeconfig-sonar-dev
           kubectl config use-context docker-desktop
 
       - name: Validate kubectl and helm installation
         run: |
           helm version
+          kubectl version
           kubectl config view
 
   deploy:
